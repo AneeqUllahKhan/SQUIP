@@ -5,7 +5,7 @@ import styles from '../styling/NativeStyling';
 import logo from '../assest/img/logo.png';
 import {ReactButton} from '../components/reactbutton';
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
   return (
     <View>
       <View style={[styles.alignItemsCenter, styles.m3]}>
@@ -15,7 +15,7 @@ function HomeScreen() {
         <View style={styles.m1}>
           <ReactButton
             onPress={() => {
-              navigation.navigate('Signup');
+              navigation.navigate('Police');
             }}
             label="Police"
           />
@@ -23,7 +23,7 @@ function HomeScreen() {
         <View style={styles.m1}>
           <ReactButton
             onPress={() => {
-              navigation.navigate('Signup');
+              navigation.navigate('Firebrigade');
             }}
             label="Fire Brigade"
           />
@@ -31,7 +31,7 @@ function HomeScreen() {
         <View style={styles.m1}>
           <ReactButton
             onPress={() => {
-              navigation.navigate('Signup');
+              navigation.navigate('Hospital');
             }}
             label="Hospital"
           />
@@ -43,11 +43,4 @@ function HomeScreen() {
 
 export default HomeScreen;
 
-const styling = StyleSheet.create({
-  // images: {
-  //   marginTop: 80,
-  //   width: '50%',
-  //   height: 110,
-  //   alignItems: 'center',
-  // },
-});
+
