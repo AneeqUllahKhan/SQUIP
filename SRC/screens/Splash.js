@@ -12,7 +12,7 @@ import styles from '../styling/NativeStyling';
 function Splash({navigation}) {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Signup');
+      navigation.navigate('HomeScreen');
     }, 2000);
   }, []);
   return (
@@ -27,7 +27,7 @@ function Splash({navigation}) {
       <Text
         style={[styles.textWhite, styles.fs1, styles.textCenter, styles.mt5]}
       >
-        Splash Screen
+        SQUIP
       </Text>
     </View>
   );

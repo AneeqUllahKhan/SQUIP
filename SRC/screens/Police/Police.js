@@ -15,7 +15,7 @@ const Police = () => {
         <MapView
           provider={PROVIDER_GOOGLE} // remove if not using Google Maps
           style={{
-            height: 500,
+            height: 400,
             width: '100%',
           }}
           region={{
