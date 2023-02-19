@@ -6,10 +6,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  Image,
 } from 'react-native';
 import Bottomnavigator from '../bottom/bottomnavigator';
 import {ReactButton} from '../components/reactbutton';
 import styles from '../styling/NativeStyling';
+import logo from '../assest/img/logo.png';
+
 export default function Login({navigation}) {
   const [model, setmodel] = useState();
 
@@ -21,10 +24,8 @@ export default function Login({navigation}) {
     <>
       <View style={[styles.p2, styles.bgWhite, styles.h100]}>
         <View style={[styles.mt5]}>
-          <View>
-            <Text style={[styles.fs2, styles.textBlack, styles.textCenter]}>
-              Login
-            </Text>
+          <View style={[styles.alignItemsCenter]}>
+          <Image source={logo} resizeMode="cover" />
           </View>
           <View style={[styles.mb2, styles.mt2]}>
             <TextInput
@@ -55,18 +56,18 @@ export default function Login({navigation}) {
           <View style={[styles.mb2, styles.rounded]}>
             <ReactButton
               onPress={() => {
-                // navigation.navigate('HomeScreen');
+                navigation.navigate('HomeScreen');
                 loginFunction();
               }}
               label="Sign in"
             />
           </View>
-          <View>
+          {/* <View>
             <Text style={[styles.fs5, styles.textBlack, styles.textCenter]}>
               Forgot Password?
             </Text>
-          </View>
-          <View>
+          </View> */}
+          {/* <View>
             <Text
               style={[
                 styles.fs5,
@@ -78,14 +79,14 @@ export default function Login({navigation}) {
             >
               OR
             </Text>
-          </View>
-          <View style={[styles.mb2, styles.rounded]}>
+          </View> */}
+          {/* <View style={[styles.mb2, styles.rounded]}>
             <ReactButton onPress={() => {}} label="FaceBook With Sign in" />
           </View>
           <View style={[styles.mb2, styles.rounded]}>
             <ReactButton onPress={() => {}} label="Google With Sign in" />
-          </View>
-          <View style={[styles.flexCenter, styles.flexRow]}>
+          </View> */}
+          {/* <View style={[styles.flexCenter, styles.flexRow]}>
             <Text style={[styles.fs6, styles.textBlack, styles.me5]}>
               Forgot Password?
             </Text>
@@ -95,7 +96,7 @@ export default function Login({navigation}) {
               }}
               label="Create Account"
             />
-          </View>
+          </View> */}
         </View>
       </View>
     </>

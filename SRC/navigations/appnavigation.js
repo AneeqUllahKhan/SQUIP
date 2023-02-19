@@ -23,18 +23,18 @@ function Appnavigation() {
           component={Splash}
         />
         <Stack.Screen
-          options={{
-            headerShown: false,
-          }}
-          name="HomeScreen"
-          component={HomeScreen}
-        />
-        <Stack.Screen
           name="Login"
           component={Login}
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="HomeScreen"
+          component={HomeScreen}
         />
         <Stack.Screen
           name="Signup"

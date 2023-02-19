@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import styles from '../../styling/NativeStyling';
 import {ReactButton} from '../../components/reactbutton';
+import Geolocation from '@react-native-community/geolocation';
 
 
 const Police = () => {
+  const [info,setInfo] = useState(0)
+  const [infos,setInfos] = useState(0)
+
+  Geolocation.getCurrentPosition(data => {
+    setInfo(data.coords.latitude)
+    setInfos(data.coords.longitude) 
+  });
+  
   return (
     <View>
       <View style={[styles.alignItemsCenter, styles.m2]}>
@@ -19,11 +28,17 @@ const Police = () => {
             width: '100%',
           }}
           region={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: info,
+            longitude: infos,
             latitudeDelta: 0.015,
             longitudeDelta: 0.0121,
-          }}></MapView>
+          }}>
+            <Marker
+            coordinate={{
+              latitude: info,
+              longitude: infos,
+            }}/>
+          </MapView>
       </View>
 
       <View

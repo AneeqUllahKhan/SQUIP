@@ -6,13 +6,15 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  Image,
 } from 'react-native';
 import styles from '../styling/NativeStyling';
+import logo from '../assest/img/logo.png';
 
 function Splash({navigation}) {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('HomeScreen');
+      navigation.navigate('Login');
     }, 2000);
   }, []);
   return (
@@ -24,10 +26,11 @@ function Splash({navigation}) {
         {flex: 1},
       ]}
     >
+      <Image source={logo} resizeMode="cover" />
       <Text
         style={[styles.textWhite, styles.fs1, styles.textCenter, styles.mt5]}
       >
-        SQUIP
+        Developed By Aneeq
       </Text>
     </View>
   );
